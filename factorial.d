@@ -3,6 +3,7 @@ import std.stdio;
 import std.conv;
 import std.string;
 
+// global variables
 const LOOP_UNTIL_INPUT = 1;
 string input;
 long factor;
