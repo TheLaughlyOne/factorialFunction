@@ -6,6 +6,7 @@ import std.string;
 // global variables
 const LOOP_UNTIL_INPUT = 1;
 string input;
+
 long factor;
 long factorBuffer;
 
@@ -20,8 +21,6 @@ void get()
         // converts the string user input into a long, and then making what is to be factored equal to it
         factor = to!long(input);
         factorBuffer = factor;
-
-        break; // exits the loop
     }
 }
 
@@ -30,10 +29,28 @@ void operation()
     long productBuffer;
     long product;
 
+    // the switch statement will compare the factor to numbers
+    switch(factor)
+    {
+        // if it is equal to 0
+        case 0:
+            productBuffer = factor; // the product buffer will be equal to the factor
+            goto writeProduct;
+            break; // then it will break
+        // if it is equal to 0
+        case 1:
+            productBuffer = factor; // the product buffer will be equal to the factor
+            goto writeProduct;
+            break; // then it will break
+        // default to
+        default:
+            break; // if both are unapplicable, it will simply break
+    }
+
     for(int i=0; i<factorBuffer; i++)
     {
         // anything multiplied by zero is equal to zero, therefore when i=0, it will continue to the next iteration
-        if(i == 0) 
+        if(i == 0)
         {
             continue;
         }
@@ -45,8 +62,9 @@ void operation()
         }
     }
 
-    product = productBuffer; // the product is equal to the buffer
-    writeln(product, "\n"); // then it outputs the product
+    writeProduct:
+        product = productBuffer; // the product is equal to the buffer
+        writeln(product, "\n"); // then it outputs the product
 }
 
 void repetition()
