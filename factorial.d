@@ -21,6 +21,9 @@ void get()
         // converts the string user input into a long, and then making what is to be factored equal to it
         factor = to!long(input);
         factorBuffer = factor;
+
+        // exits the loop
+        break;
     }
 }
 
@@ -29,20 +32,24 @@ void operation()
     long productBuffer;
     long product;
 
-    // the switch statement will compare the factor to numbers
     switch(factor)
     {
-        // if it is equal to 0
         case 0:
-            productBuffer = 1; // the product buffer will be equal to 1
-            break; // then it will break
-        // if it is equal to 0
+            // 0! = 1, therefore the buffer will be 1
+            productBuffer = 1;
+
+            // skips the for loop to go to outputting the product, saving resources
+            goto writeProduct;
+            break;
         case 1:
-            productBuffer = factor; // the product buffer will be equal to the factor
-            break; // then it will break
-        // default to
+            // 1! = 1, therefore the buffer will be 1
+            productBuffer = 1;
+
+            // skips the for loop to go to outputting the product, saving resources
+            goto writeProduct;
+            break;
         default:
-            break; // if both are unapplicable, it will simply break
+            break;
     }
 
     for(int i=0; i<factorBuffer; i++)
@@ -59,9 +66,10 @@ void operation()
             factor = i*factor; // factor also becomes equal to i multiplied by itself
         }
     }
-    
-    product = productBuffer; // the product is equal to the buffer
-    writeln(product, "\n"); // then it outputs the product
+
+    writeProduct:
+        product = productBuffer; // the product is equal to the buffer
+        writeln(product, "\n"); // then it outputs the product
 }
 
 void repetition()
