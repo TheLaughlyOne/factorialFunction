@@ -34,7 +34,7 @@ void operation()
     {
         // if it is equal to 0
         case 0:
-            productBuffer = factor; // the product buffer will be equal to the factor
+            productBuffer = 1; // the product buffer will be equal to 1
             goto writeProduct;
             break; // then it will break
         // if it is equal to 0
