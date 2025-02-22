@@ -35,12 +35,10 @@ void operation()
         // if it is equal to 0
         case 0:
             productBuffer = 1; // the product buffer will be equal to 1
-            goto writeProduct;
             break; // then it will break
         // if it is equal to 0
         case 1:
             productBuffer = factor; // the product buffer will be equal to the factor
-            goto writeProduct;
             break; // then it will break
         // default to
         default:
@@ -61,10 +59,9 @@ void operation()
             factor = i*factor; // factor also becomes equal to i multiplied by itself
         }
     }
-
-    writeProduct:
-        product = productBuffer; // the product is equal to the buffer
-        writeln(product, "\n"); // then it outputs the product
+    
+    product = productBuffer; // the product is equal to the buffer
+    writeln(product, "\n"); // then it outputs the product
 }
 
 void repetition()
